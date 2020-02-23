@@ -1,0 +1,18 @@
+.table td{
+    padding: 0px !important;
+}
+.cell-sheet{
+    position: absolute;
+    max-height: 75%;
+    max-width: 99%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.table-header-sticky{
+    position: sticky;
+    
+}
+th{
+    text-align: center;
+}

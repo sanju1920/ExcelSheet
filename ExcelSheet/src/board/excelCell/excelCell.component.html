@@ -1,0 +1,4 @@
+<div class="cell"> 
+        <!-- <div class="form-control" (click)="editorOpen($event)" [hidden]="cell.isEditing">{{cell.value}}</div>      -->
+        <input type="text" [(ngModel)] =cell.value class="form-control" (focusout)="closeEditor()" [hidden]="cell.isEditing"/>
+</div>
