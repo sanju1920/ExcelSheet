@@ -3,55 +3,15 @@
         <thead class="table-header-sticky bg-light">
             <tr>
                 <th scope="col"></th>
-                <th scope="col">A</th>
-                <th scope="col">B</th>
-                <th scope="col">C</th>
-                <th scope="col">D</th>
-                <th scope="col">E</th>
-                <th scope="col">F</th>
-                <th scope="col">G</th>
-                <th scope="col">H</th>
-                <th scope="col">I</th>
-                <th scope="col">J</th>
-                <th scope="col">K</th>
+                <th scope="col" *ngFor="let item of sheet.rows[0].cells;index as i">{{getLetter(i+1)}}</th>
             </tr>
         </thead>
         <tbody>
-            <tr  *ngFor="let cell of cells;index as i">
+            <tr  *ngFor="let row of sheet.rows;index as i">
                 <th scope="row" class="bg-light">{{i+1}} </th>
-                <td>
+                <td *ngFor="let cell of row.cells">
                     <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
-                <td>
-                    <app-cell [cell]=cell></app-cell>
-                </td>
+                </td>                
             </tr>       
         </tbody>
     </table>

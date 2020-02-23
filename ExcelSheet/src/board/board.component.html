@@ -9,16 +9,16 @@
     <div class="row">
         <div class="col-md-auto">
             <div class="alert bg-light">
-                A1
+                {{board.cellAddress}}&nbsp;
             </div>
         </div>
         <div class="col">
             <div class="alert bg-light">
-                =1+2
+                {{board.cellFormula}}&nbsp;
             </div>
         </div>
     </div>
-    <app-sheet></app-sheet>
+    <app-sheet [sheet]="board.activeSheet"></app-sheet>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
         <div class="col">
@@ -29,13 +29,9 @@
                         <span class="sr-only">Previous</span>
                     </a>
                 </li>
-                <li class="page-item"><a class="page-link" href="#">Sheet 1</a></li>
-                <li class="page-item"><a class="page-link" href="#">Sheet 2</a></li>
-                <li class="page-item"><a class="page-link" href="#">Sheet 3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Sheet 4</a></li>
-                <li class="page-item"><a class="page-link" href="#">Sheet 5</a></li>
-                <li class="page-item"><a class="page-link" href="#">Sheet 6</a></li>
-                <li class="page-item"><a class="page-link" href="#">Sheet 7</a></li>
+                <li class="page-item" *ngFor="let sheet of board.sheets">
+                    <a class="page-link" href="#" (click)="setActiveSheet(sheet.name)">{{sheet.name}}</a>
+                </li>
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>

@@ -1,26 +1,34 @@
 export class ExcelCell{
     name:string;
     isReadOnly:boolean;
-    isEditing:boolean = false;
+    isEditing:boolean;
+    isDirty:boolean;
+    formula:string;
     address:string;
     rowNumber:number;
     columnNumer:number;
     value:any;
-    constructor( name){
-            this.name = name;
-            this.value = name;
+    constructor(address:string){
+            this.address = address;
+            this.value = address;
     };
 
-    getValue:any =()=>{
+    setName(name:string):ExcelCell{
+        this.name = name;
+        return this;
+    };
+
+    getValue():any{
         return this.value;
     };
-    setValue=(value:any):any=>{
+
+    setValue(value:any):ExcelCell{
         this.value = value;
         return this;
-    }
-    updateValue = (value:any)=> {
+    };
+    updateValue(value:any):ExcelCell{
             this.value = value;
-            this.isReadOnly = true;
+            this.isDirty = true;
             return this;        
-    }
+    };
 }
