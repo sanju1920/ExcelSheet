@@ -9,9 +9,21 @@
     overflow-y: auto;
 }
 
-.table-header-sticky{
+.make-row-sticky{
     position: sticky;
+    top:0px;
     
+}
+
+.make-col-sticky{
+    position: sticky;
+    left: 0px;
+}
+.corner{
+    position: sticky;
+    left: 0px;
+    top: 0px;
+    z-index: 9;
 }
 th{
     text-align: center;

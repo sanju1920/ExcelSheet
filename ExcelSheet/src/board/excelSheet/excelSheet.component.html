@@ -1,14 +1,14 @@
 <div class="table-responsive cell-sheet">
     <table class="table table-bordered">
-        <thead class="table-header-sticky bg-light">
+        <thead class="table-header-sticky">
             <tr>
-                <th scope="col"></th>
-                <th scope="col" *ngFor="let item of sheet.rows[0].cells;index as i">{{getLetter(i+1)}}</th>
+                <th scope="col" class="bg-light corner"></th>
+                <th class=" bg-light make-row-sticky" scope="col" *ngFor="let item of sheet.rows[0].cells;index as i">{{getLetter(i+1)}}</th>
             </tr>
         </thead>
         <tbody>
             <tr  *ngFor="let row of sheet.rows;index as i">
-                <th scope="row" class="bg-light">{{i+1}} </th>
+                <th scope="row" class="bg-light make-col-sticky">{{i+1}} </th>
                 <td *ngFor="let cell of row.cells">
                     <app-cell [cell]=cell></app-cell>
                 </td>                
