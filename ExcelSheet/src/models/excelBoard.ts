@@ -9,7 +9,6 @@ export class ExcelBoard{
     addSheet(name:string, rowCount:number, columnCount:number):void{
         
         this.sheets.push(new ExcelSheet(name,rowCount,columnCount));
-        this.activeSheet = this.sheets[this.sheets.length -1];
     };
 
     getActiveSheet():ExcelSheet{

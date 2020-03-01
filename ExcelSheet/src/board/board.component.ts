@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { ExcelBoard } from 'src/models/excelBoard';
+import { BoardService } from 'src/app/board.service';
+ 
 
 @Component({
     selector:'app-board',
@@ -10,16 +12,14 @@ import { ExcelBoard } from 'src/models/excelBoard';
 export class BoardComponent{
     board: ExcelBoard;
 
-    constructor(){
-        this.board = new ExcelBoard();
-        this.board.addSheet('Test',20,10);
-        this.board.addSheet('Demo',15,20);
-        this.board.addSheet('Test 1',10,10);
+    constructor(private boardService:BoardService){ 
+        this.board = boardService.board;     
     }
 
     setActiveSheet(name:string){
         this.board.setActiveSheet(name);
     };
-    
-
+    addSheet(){
+        this.boardService.addSheet(null);
+    }
 }

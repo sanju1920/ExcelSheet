@@ -21,6 +21,9 @@
     <app-sheet [sheet]="board.activeSheet"></app-sheet>
 
     <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="col-md-auto">
+            <span class="btn btn-success" (click)="addSheet()">+</span>
+        </div>
         <div class="col">
             <ul class="pagination">
                 <li class="page-item">
